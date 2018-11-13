@@ -8,18 +8,53 @@
 
 import UIKit
 
+private let kTitleViewH = 40
+
 class HomeViewController: UIViewController {
 
+    //MARK:- 懒加载
+    private lazy var pageTitleView : PageTitleView = {
+        
+        let titles = ["推荐","游戏","娱乐","趣玩"]
+        let titleFrame = CGRect(x: 0, y: kNavgationBarh+kStatusBarH, width: Int(kScreenW), height: kTitleViewH)
+        let titleView = PageTitleView(frame: titleFrame, titles: titles)
+        return titleView
+    }()
+    
+    //MARK:- 懒加载pageContenView
+    private lazy var pageContentView : UIView = {
+        let contenY : CGFloat = CGFloat(kStatusBarH + kNavgationBarh + kTitleViewH)
+        let contenH : CGFloat = kScreenH - contenY
+        let contenFrame = CGRect(x: 0, y: contenY, width: kScreenW, height: contenH)
+        
+        var childVcs = [UIViewController]()
+        for _ in 0..<4 {
+            let vc = UIViewController()
+            vc.view.backgroundColor = UIColor(r: CGFloat(arc4random_uniform(255)), g: CGFloat(arc4random_uniform(255)), b: CGFloat(arc4random_uniform(255)), a: 1.0)
+            childVcs.append(vc)
+        }
+        
+        let pageContentView = PageContentView(frame: contenFrame, childVcs: childVcs, parentVC: self)
+        return pageContentView
+    }()
+    
+    //MARK:- 系统函数
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setUpUI()
-        
     }
     
     private func setUpUI () {
-        
+        // 不要调整UIScrollview的内边距
+        automaticallyAdjustsScrollViewInsets = false
+        //MARK:- 设置导航栏
         setUpNavgationBarItem()
+        //MARK:- 添加TitleView
+        view.addSubview(pageTitleView)
+        
+        //MARK:- 添加contentPageView
+        view.addSubview(pageContentView)
+        pageContentView.backgroundColor = UIColor.purple
     }
     
     private func setUpNavgationBarItem() {
@@ -60,21 +95,14 @@ class HomeViewController: UIViewController {
         /*
          let historyItem = UIBarButtonItem.createBatBtnItem(imageName: "cm_nav_history_white_HL", highlightName: "cm_nav_history_white", size: size)
          let searchItem = UIBarButtonItem.createBatBtnItem(imageName: "cm_search_black_normal", highlightName: "cm_search_black_normal", size: size)
-         
-         
          let qrcodeItem = UIBarButtonItem.createBatBtnItem(imageName: "btn_qr_scan_normal", highlightName: "btn_qr_scan_selected", size: size)
-         
          */
         
         //便利构造函数
         let historyItem = UIBarButtonItem(imageName: "cm_nav_history_white_HL", highlightName: "cm_nav_history_white", size: size)
         let searchItem = UIBarButtonItem(imageName: "cm_search_black_normal", highlightName: "cm_search_black_pressed", size: size)
         let qrcodeItem = UIBarButtonItem(imageName: "btn_qr_scan_normal", highlightName: "btn_qr_scan_selected", size: size)
-        
-        
-        
         navigationItem.rightBarButtonItems = [historyItem,searchItem,qrcodeItem]
-        
     }
 
 }
