@@ -13,16 +13,17 @@ private let kTitleViewH = 40
 class HomeViewController: UIViewController {
 
     //MARK:- 懒加载
-    private lazy var pageTitleView : PageTitleView = {
+    private lazy var pageTitleView : PageTitleView = { [weak self] in
         
         let titles = ["推荐","游戏","娱乐","趣玩"]
         let titleFrame = CGRect(x: 0, y: kNavgationBarh+kStatusBarH, width: Int(kScreenW), height: kTitleViewH)
         let titleView = PageTitleView(frame: titleFrame, titles: titles)
+        titleView.delegate = self
         return titleView
     }()
     
     //MARK:- 懒加载pageContenView
-    private lazy var pageContentView : UIView = {
+    private lazy var pageContentView : PageContentView = { [weak self] in
         let contenY : CGFloat = CGFloat(kStatusBarH + kNavgationBarh + kTitleViewH)
         let contenH : CGFloat = kScreenH - contenY
         let contenFrame = CGRect(x: 0, y: contenY, width: kScreenW, height: contenH)
@@ -105,4 +106,12 @@ class HomeViewController: UIViewController {
         navigationItem.rightBarButtonItems = [historyItem,searchItem,qrcodeItem]
     }
 
+}
+
+
+//MARK:- 遵守pageTitleViewDelegate
+extension HomeViewController : PageTitleViewDelegate {
+    func pageTitleView(titleView: PageTitleView, selectIndex index: Int) {
+        pageContentView.setContentViewIndex(index: index)
+    }
 }

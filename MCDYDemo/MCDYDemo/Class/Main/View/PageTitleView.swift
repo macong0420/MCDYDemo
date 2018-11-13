@@ -8,14 +8,23 @@
 
 import UIKit
 
+protocol PageTitleViewDelegate: class { //定义成class 表示只有类能遵守这个代理
+    ///代理方法一般以代理类名开头
+    func pageTitleView(titleView: PageTitleView, selectIndex index : Int)
+}
+
 private let kScrollLineH : CGFloat = 2
 
 class PageTitleView: UIView {
 
     //MARK:- 定义属性
     private var titles : [String]
-//    private var titleLabels :[UILabel]
     private lazy var titleLabels : [UILabel] = [UILabel]()
+    
+    weak var delegate : PageTitleViewDelegate? //代理可选
+    
+    //保存titlelabel的下标
+    private var cureentIndex : Int = 0;
     
     //MARK:- 懒加载一个scrowview
     private lazy var scrowView : UIScrollView = {
@@ -84,6 +93,13 @@ extension PageTitleView {
             label.frame = CGRect(x: labelX, y: labelY, width: labelW, height: labelH)
             scrowView.addSubview(label)
             titleLabels.append(label)
+            
+            //给label添加手势
+            //1.打开用户交互
+            label.isUserInteractionEnabled = true
+            //手势
+            let tapG = UITapGestureRecognizer(target: self, action: #selector(self.titlelabelClick(tapG:)))
+            label.addGestureRecognizer(tapG)
         }
         
     }
@@ -100,7 +116,34 @@ extension PageTitleView {
         guard let fristLabel = titleLabels.first else { return }
         fristLabel.textColor = UIColor.orange
         scrollLine.frame = CGRect(x: fristLabel.frame.origin.x, y: frame.height-kScrollLineH, width: fristLabel.frame.width, height: kScrollLineH)
+    }
+}
+
+//MARK:- 监听手势点击
+extension PageTitleView {
+    //监听手势 需要添加关键字 @objc
+    @objc private func titlelabelClick(tapG: UITapGestureRecognizer) {
+        print("-------")
+        //拿到当前label
+        guard let cureentLabel = tapG.view as? UILabel else {return}
+        //上一个label
+        let preLabel = titleLabels[cureentIndex]
+        //更新cureentIndex值
+        cureentIndex = cureentLabel.tag
         
+        //更新颜色
+        cureentLabel.textColor = UIColor.orange
+        preLabel.textColor = UIColor.darkGray
         
+        //滚动滑块位移
+        let scrollLineX = CGFloat(cureentLabel.tag) * scrollLine.frame.width
+        
+        UIView.animate(withDuration: 0.15) {
+            self.scrollLine.frame.origin.x = scrollLineX
+        }
+        
+        //设置代理 通知pagecontengView移动
+        
+        delegate?.pageTitleView(titleView: self, selectIndex: cureentIndex)
     }
 }

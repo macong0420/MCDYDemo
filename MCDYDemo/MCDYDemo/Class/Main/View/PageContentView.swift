@@ -14,13 +14,16 @@ class PageContentView: UIView {
     
     //MARK:- 定义属性
     private var childVcs: [UIViewController]
-    private var parentVC: UIViewController
+    ///weak 修饰只能修饰可选类型 所以后面添加一个问号
+    private weak var parentVC: UIViewController?
     
     //MARK:- 懒加载属性
-    private lazy var collectionView : UICollectionView = {
+    /// 闭包里面使用self最好也使用weak 否则有可能会出现循环引用
+    ///闭包里的weak使用 [weak self] in
+    private lazy var collectionView : UICollectionView = { [weak self] in
        //1.创建layout
         let layout = UICollectionViewFlowLayout()
-        layout.itemSize = self.bounds.size
+        layout.itemSize = (self?.bounds.size)!
         layout.minimumLineSpacing = 0
         layout.minimumInteritemSpacing = 0
         layout.scrollDirection = .horizontal //水平滚动
@@ -39,13 +42,13 @@ class PageContentView: UIView {
     }()
     
     //MARK:- 自定义构造函数
-    init(frame: CGRect, childVcs: [UIViewController], parentVC: UIViewController) {
+    init(frame: CGRect, childVcs: [UIViewController], parentVC: UIViewController?) {
         self.childVcs = childVcs
         self.parentVC = parentVC
         
         super.init(frame: frame)
         
-        setupUI() 
+        setupUI()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -58,7 +61,7 @@ extension PageContentView {
     private func setupUI() {
         //1.将所有子控制器添加到父控制器中
         for childvc in childVcs {
-            parentVC.addChild(childvc)
+            parentVC?.addChild(childvc)
         }
         
         //2.添加UICollectionView 用于cell中存放控制器view
@@ -85,5 +88,15 @@ extension PageContentView : UICollectionViewDataSource {
         childVc.view.frame = cell.contentView.bounds
         cell.contentView.addSubview(childVc.view)
         return cell
+    }
+}
+
+//MARK:- 公开的方法
+
+extension PageContentView {
+    //滚动contentview
+    func setContentViewIndex(index: Int) {
+        let offsetX = CGFloat(index) * collectionView.frame.size.width
+        collectionView.setContentOffset(CGPoint(x: offsetX, y: 0), animated: false)
     }
 }
