@@ -14,6 +14,8 @@ protocol PageTitleViewDelegate: class { //定义成class 表示只有类能遵�
 }
 
 private let kScrollLineH : CGFloat = 2
+private let kNormalColor : (CGFloat, CGFloat, CGFloat) = (85,85,85) //元组 灰色色值
+private let kSelectedColor : (CGFloat, CGFloat, CGFloat) = (255,125,0) //橙色
 
 class PageTitleView: UIView {
 
@@ -123,11 +125,14 @@ extension PageTitleView {
 extension PageTitleView {
     //监听手势 需要添加关键字 @objc
     @objc private func titlelabelClick(tapG: UITapGestureRecognizer) {
-        print("-------")
         //拿到当前label
         guard let cureentLabel = tapG.view as? UILabel else {return}
         //上一个label
+        if cureentLabel.tag == cureentIndex {
+            return
+        }
         let preLabel = titleLabels[cureentIndex]
+
         //更新cureentIndex值
         cureentIndex = cureentLabel.tag
         
@@ -145,5 +150,28 @@ extension PageTitleView {
         //设置代理 通知pagecontengView移动
         
         delegate?.pageTitleView(titleView: self, selectIndex: cureentIndex)
+    }
+}
+
+//MARK:- 对f外方法
+extension PageTitleView {
+    func setProGress(progress: CGFloat, cureentIndex: Int, targetIndex: Int) {
+        //1.取出label
+        let cureentLable = titleLabels[cureentIndex]
+        let targetLabel = titleLabels[targetIndex]
+        
+        //2.处理滑块滑动的逻辑
+        let movetoX = targetLabel.frame.origin.x - cureentLable.frame.origin.x
+        let moveX = movetoX * progress
+        
+        scrollLine.frame.origin.x = cureentLable.frame.origin.x + moveX
+        
+        //3,设置颜色渐变
+        //设置颜色变化范围
+        let colorDelta = (kSelectedColor.0-kNormalColor.0,kSelectedColor.1-kNormalColor.1,kSelectedColor.2-kNormalColor.2)
+        cureentLable.textColor = UIColor(r: kSelectedColor.0 - colorDelta.0 * progress, g:kSelectedColor.1 - colorDelta.1 * progress, b: kSelectedColor.2 - colorDelta.2 * progress, a: 1.0)
+        targetLabel.textColor = UIColor(r: kNormalColor.0 + colorDelta.0 * progress, g: kNormalColor.1 + colorDelta.1 * progress, b: kNormalColor.2 + colorDelta.2 * progress, a: 1.0)
+        
+        self.cureentIndex = targetIndex
     }
 }

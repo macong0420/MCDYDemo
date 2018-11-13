@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol PageContentViewDelegate : class {
+    func pageContentView(pageContentView: PageContentView, progress: CGFloat, cureentIndex: Int, targetIndex: Int)
+}
+
 private let ContentCellID = "ContentCellID"
 
 class PageContentView: UIView {
@@ -16,6 +20,14 @@ class PageContentView: UIView {
     private var childVcs: [UIViewController]
     ///weak 修饰只能修饰可选类型 所以后面添加一个问号
     private weak var parentVC: UIViewController?
+    
+    ///contentview 滑动的index
+    private var startScorllX : CGFloat = 0;
+    
+    //点击 是否禁用 d滑动代理
+    private var isForbitScrollDelegate : Bool = false
+    
+    weak var delegate : PageContentViewDelegate?
     
     //MARK:- 懒加载属性
     /// 闭包里面使用self最好也使用weak 否则有可能会出现循环引用
@@ -34,6 +46,7 @@ class PageContentView: UIView {
         collectionView.isPagingEnabled = true
         collectionView.bounces = false
         collectionView.dataSource = self
+        collectionView.delegate = self
         
         //注册cell
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: ContentCellID)
@@ -91,12 +104,66 @@ extension PageContentView : UICollectionViewDataSource {
     }
 }
 
+//MARK:- 遵守UIColectionViewDelegate
+extension PageContentView : UICollectionViewDelegate {
+    //滑动
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        startScorllX = scrollView.contentOffset.x
+        isForbitScrollDelegate = false
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        
+        if isForbitScrollDelegate {return}
+        
+        //定义所需数据
+        var progress : CGFloat = 0
+        var cureentIndex : Int = 0
+        var targetIndex : Int = 0
+        
+        //判断左滑 还是 右滑
+        let cureentOffsetX = scrollView.contentOffset.x
+        let scrollViewW = scrollView.bounds.width
+        
+        if cureentOffsetX > startScorllX { //左滑
+            progress = cureentOffsetX / scrollViewW - floor((cureentOffsetX / scrollViewW))
+            cureentIndex = Int(cureentOffsetX / scrollViewW)
+            targetIndex = cureentIndex + 1
+            //防止越界
+            if targetIndex >= childVcs.count {
+                targetIndex = childVcs.count - 1
+            }
+            
+            if cureentOffsetX - startScorllX == scrollViewW {
+                progress = 1.0
+                targetIndex = cureentIndex
+            }
+            
+            
+        } else { //右滑
+            progress = 1 - (cureentOffsetX / scrollViewW - floor((cureentOffsetX / scrollViewW)))
+            targetIndex = Int(cureentOffsetX / scrollViewW)
+            cureentIndex = targetIndex + 1
+            
+            if cureentIndex >= childVcs.count {
+                cureentIndex = childVcs.count - 1
+            }
+        }
+        
+        //MARK:- 将progress,cureentIndex,targetIndex 传递给 titleView
+        delegate?.pageContentView(pageContentView: self, progress: progress, cureentIndex: cureentIndex, targetIndex: targetIndex)
+        
+    }
+}
+
 //MARK:- 公开的方法
 
 extension PageContentView {
     //滚动contentview
     func setContentViewIndex(index: Int) {
+        isForbitScrollDelegate = true
         let offsetX = CGFloat(index) * collectionView.frame.size.width
         collectionView.setContentOffset(CGPoint(x: offsetX, y: 0), animated: false)
+        
     }
 }
