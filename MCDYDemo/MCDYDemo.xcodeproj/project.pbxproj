@@ -14,6 +14,14 @@
 		E27D4B0E21996BB4005248D5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E27D4B0C21996BB4005248D5 /* LaunchScreen.storyboard */; };
 		E27D4B1921996BB5005248D5 /* MCDYDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27D4B1821996BB5005248D5 /* MCDYDemoTests.swift */; };
 		E27D4B2421996BB5005248D5 /* MCDYDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27D4B2321996BB5005248D5 /* MCDYDemoUITests.swift */; };
+		E27D4B3D21996FDF005248D5 /* Live.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E27D4B3C21996FDF005248D5 /* Live.storyboard */; };
+		E27D4B4221997011005248D5 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E27D4B4121997011005248D5 /* Profile.storyboard */; };
+		E27D4B4421997185005248D5 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27D4B4321997185005248D5 /* MainViewController.swift */; };
+		E27D4B46219974F8005248D5 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E27D4B45219974F8005248D5 /* Home.storyboard */; };
+		E27D4B4821997512005248D5 /* Follow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E27D4B4721997512005248D5 /* Follow.storyboard */; };
+		E27D4B56219975AB005248D5 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27D4B55219975AB005248D5 /* HomeViewController.swift */; };
+		E27D4B59219981DD005248D5 /* UIBarButtonItem-Extision.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27D4B58219981DD005248D5 /* UIBarButtonItem-Extision.swift */; };
+		E2DC9252219A6D5600C1B1FF /* PageTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2DC9251219A6D5600C1B1FF /* PageTitleView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +55,14 @@
 		E27D4B1F21996BB5005248D5 /* MCDYDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MCDYDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E27D4B2321996BB5005248D5 /* MCDYDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCDYDemoUITests.swift; sourceTree = "<group>"; };
 		E27D4B2521996BB5005248D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E27D4B3C21996FDF005248D5 /* Live.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Live.storyboard; sourceTree = "<group>"; };
+		E27D4B4121997011005248D5 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		E27D4B4321997185005248D5 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		E27D4B45219974F8005248D5 /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		E27D4B4721997512005248D5 /* Follow.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Follow.storyboard; sourceTree = "<group>"; };
+		E27D4B55219975AB005248D5 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		E27D4B58219981DD005248D5 /* UIBarButtonItem-Extision.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem-Extision.swift"; sourceTree = "<group>"; };
+		E2DC9251219A6D5600C1B1FF /* PageTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageTitleView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,8 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				E27D4B0321996BB3005248D5 /* AppDelegate.swift */,
-				E27D4B0521996BB3005248D5 /* ViewController.swift */,
-				E27D4B0721996BB3005248D5 /* Main.storyboard */,
+				E27D4B3321996DB0005248D5 /* Class */,
 				E27D4B0A21996BB4005248D5 /* Assets.xcassets */,
 				E27D4B0C21996BB4005248D5 /* LaunchScreen.storyboard */,
 				E27D4B0F21996BB4005248D5 /* Info.plist */,
@@ -123,6 +138,192 @@
 				E27D4B2521996BB5005248D5 /* Info.plist */,
 			);
 			path = MCDYDemoUITests;
+			sourceTree = "<group>";
+		};
+		E27D4B3321996DB0005248D5 /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				E27D4B3821996DB0005248D5 /* Main */,
+				E27D4B3421996DB0005248D5 /* Home */,
+				E27D4B3721996DB0005248D5 /* Live */,
+				E27D4B3521996DB0005248D5 /* Follow */,
+				E27D4B3621996DB0005248D5 /* Profile */,
+				E27D4B57219981D2005248D5 /* Extension */,
+			);
+			path = Class;
+			sourceTree = "<group>";
+		};
+		E27D4B3421996DB0005248D5 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				E27D4B45219974F8005248D5 /* Home.storyboard */,
+				E27D4B4E21997572005248D5 /* Controller */,
+				E27D4B4C21997572005248D5 /* Model */,
+				E27D4B4D21997572005248D5 /* View */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		E27D4B3521996DB0005248D5 /* Follow */ = {
+			isa = PBXGroup;
+			children = (
+				E27D4B4A21997564005248D5 /* Controller */,
+				E27D4B4921997564005248D5 /* Model */,
+				E27D4B4B21997564005248D5 /* View */,
+				E27D4B4721997512005248D5 /* Follow.storyboard */,
+			);
+			path = Follow;
+			sourceTree = "<group>";
+		};
+		E27D4B3621996DB0005248D5 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				E27D4B4121997011005248D5 /* Profile.storyboard */,
+				E27D4B522199758F005248D5 /* Controller */,
+				E27D4B542199758F005248D5 /* Model */,
+				E27D4B532199758F005248D5 /* View */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		E27D4B3721996DB0005248D5 /* Live */ = {
+			isa = PBXGroup;
+			children = (
+				E27D4B3C21996FDF005248D5 /* Live.storyboard */,
+				E27D4B5021997581005248D5 /* Controller */,
+				E27D4B5121997581005248D5 /* Model */,
+				E27D4B4F21997581005248D5 /* View */,
+			);
+			path = Live;
+			sourceTree = "<group>";
+		};
+		E27D4B3821996DB0005248D5 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				E27D4B0721996BB3005248D5 /* Main.storyboard */,
+				E2DC9250219A6D3200C1B1FF /* Controller */,
+				E2DC924E219A6D3200C1B1FF /* Model */,
+				E2DC924F219A6D3200C1B1FF /* View */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		E27D4B4921997564005248D5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E27D4B4A21997564005248D5 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		E27D4B4B21997564005248D5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E27D4B4C21997572005248D5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E27D4B4D21997572005248D5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E27D4B4E21997572005248D5 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E27D4B55219975AB005248D5 /* HomeViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		E27D4B4F21997581005248D5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E27D4B5021997581005248D5 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		E27D4B5121997581005248D5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E27D4B522199758F005248D5 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		E27D4B532199758F005248D5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E27D4B542199758F005248D5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E27D4B57219981D2005248D5 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				E27D4B58219981DD005248D5 /* UIBarButtonItem-Extision.swift */,
+			);
+			name = Extension;
+			path = Tools/Extension;
+			sourceTree = "<group>";
+		};
+		E2DC924E219A6D3200C1B1FF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E2DC924F219A6D3200C1B1FF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E2DC9251219A6D5600C1B1FF /* PageTitleView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E2DC9250219A6D3200C1B1FF /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E27D4B4321997185005248D5 /* MainViewController.swift */,
+				E27D4B0521996BB3005248D5 /* ViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,6 +433,10 @@
 				E27D4B0E21996BB4005248D5 /* LaunchScreen.storyboard in Resources */,
 				E27D4B0B21996BB4005248D5 /* Assets.xcassets in Resources */,
 				E27D4B0921996BB3005248D5 /* Main.storyboard in Resources */,
+				E27D4B4821997512005248D5 /* Follow.storyboard in Resources */,
+				E27D4B3D21996FDF005248D5 /* Live.storyboard in Resources */,
+				E27D4B4221997011005248D5 /* Profile.storyboard in Resources */,
+				E27D4B46219974F8005248D5 /* Home.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,8 +461,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2DC9252219A6D5600C1B1FF /* PageTitleView.swift in Sources */,
+				E27D4B59219981DD005248D5 /* UIBarButtonItem-Extision.swift in Sources */,
+				E27D4B4421997185005248D5 /* MainViewController.swift in Sources */,
 				E27D4B0621996BB3005248D5 /* ViewController.swift in Sources */,
 				E27D4B0421996BB3005248D5 /* AppDelegate.swift in Sources */,
+				E27D4B56219975AB005248D5 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

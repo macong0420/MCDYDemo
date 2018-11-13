@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="C62-Oi-Wt3">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="CMY-ou-Wgq">
+            <objects>
+                <viewController id="gLX-hx-YNt" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Yd6-2i-Exq">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="2nZ-M8-vyA"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="a13-pQ-9T3"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zRH-bG-Mvr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-169" y="940"/>
+        </scene>
+        <!--关注-->
+        <scene sceneID="4oY-Ak-Y9F">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="C62-Oi-Wt3" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="关注" image="audio_live_knock_disable" selectedImage="audio_like_icon" id="sDR-SJ-3cf"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="1je-0o-pQr">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="gLX-hx-YNt" kind="relationship" relationship="rootViewController" id="uJD-ba-LtN"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="K7E-xI-QcB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1113" y="940"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="audio_like_icon" width="9" height="7.5"/>
+        <image name="audio_live_knock_disable" width="18" height="18"/>
+    </resources>
+</document>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ubK-kv-t04">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="IqQ-lO-hnP">
+            <objects>
+                <viewController id="Ptk-B5-uz5" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="HNH-sY-LtS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="ER2-MM-hGx"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="OO9-uY-wqH"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="stp-ZQ-WJw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1266" y="573"/>
+        </scene>
+        <!--我的-->
+        <scene sceneID="3kA-kM-CLs">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ubK-kv-t04" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="我的" image="YBUC_Followed" selectedImage="YBUC_Follow" id="xfG-ce-z6f"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="XQk-AM-y1Y">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Ptk-B5-uz5" kind="relationship" relationship="rootViewController" id="zoa-K4-BuK"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="e3x-u6-hVB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="370" y="573"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="YBUC_Follow" width="17.5" height="18"/>
+        <image name="YBUC_Followed" width="18" height="18"/>
+    </resources>
+</document>
