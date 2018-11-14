@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="CollectionPretyCell" customModule="MCDYDemo" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="135" height="161"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="135" height="161"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dyla_ico_location" translatesAutoresizingMaskIntoConstraints="NO" id="C8k-nH-RSX">
+                        <rect key="frame" x="5" y="144" width="12" height="12"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="12" id="KQ5-Bb-dq0"/>
+                            <constraint firstAttribute="width" constant="12" id="Stz-wh-OaX"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="北京市" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nwS-iR-0et">
+                        <rect key="frame" x="22" y="144.5" width="108" height="11"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="9"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="用户名" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dBp-ub-RdY">
+                        <rect key="frame" x="5" y="124" width="125" height="15"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="15" id="ez8-ra-bY8"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="app_icon_default.84d5c252" translatesAutoresizingMaskIntoConstraints="NO" id="RkX-CZ-7Ba">
+                        <rect key="frame" x="0.0" y="0.0" width="135" height="119"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="8"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                        </userDefinedRuntimeAttributes>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="55555在线" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y0T-YC-I7q">
+                        <rect key="frame" x="78" y="5" width="52" height="12"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.40000000000000002" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="52" id="V5p-wt-5Kt"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="3"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                        </userDefinedRuntimeAttributes>
+                    </label>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="C8k-nH-RSX" firstAttribute="top" secondItem="dBp-ub-RdY" secondAttribute="bottom" constant="5" id="52U-B7-New"/>
+                <constraint firstItem="dBp-ub-RdY" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="5Ys-Il-IUZ"/>
+                <constraint firstAttribute="trailing" secondItem="nwS-iR-0et" secondAttribute="trailing" constant="5" id="718-oa-Ql5"/>
+                <constraint firstAttribute="trailing" secondItem="dBp-ub-RdY" secondAttribute="trailing" constant="5" id="C7b-2T-KNq"/>
+                <constraint firstItem="RkX-CZ-7Ba" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Jk6-Sq-Qzy"/>
+                <constraint firstAttribute="trailing" secondItem="RkX-CZ-7Ba" secondAttribute="trailing" id="U8p-06-bsT"/>
+                <constraint firstItem="Y0T-YC-I7q" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="5" id="Ujd-cy-6mj"/>
+                <constraint firstItem="dBp-ub-RdY" firstAttribute="top" secondItem="RkX-CZ-7Ba" secondAttribute="bottom" constant="5" id="czF-NI-cug"/>
+                <constraint firstItem="nwS-iR-0et" firstAttribute="leading" secondItem="C8k-nH-RSX" secondAttribute="trailing" constant="5" id="fel-xF-dno"/>
+                <constraint firstItem="C8k-nH-RSX" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="geW-m7-Qu9"/>
+                <constraint firstAttribute="trailing" secondItem="Y0T-YC-I7q" secondAttribute="trailing" constant="5" id="lyg-B7-kfG"/>
+                <constraint firstAttribute="bottom" secondItem="C8k-nH-RSX" secondAttribute="bottom" constant="5" id="qI8-Ic-DFm"/>
+                <constraint firstItem="nwS-iR-0et" firstAttribute="centerY" secondItem="C8k-nH-RSX" secondAttribute="centerY" id="uo6-1t-PJB"/>
+                <constraint firstItem="RkX-CZ-7Ba" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="xYF-5L-kWE"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="135" height="161"/>
+            <point key="canvasLocation" x="-55.200000000000003" y="220.83958020989508"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="app_icon_default.84d5c252" width="345" height="207"/>
+        <image name="dyla_ico_location" width="12" height="12"/>
+    </resources>
+</document>

@@ -11,10 +11,12 @@ import UIKit
 private let kMargin : CGFloat = 10
 private let kNomalCellW : CGFloat = (kScreenW - kMargin * 3 ) / 2
 private let kNomalCellH : CGFloat = kNomalCellW * 3 / 4
+private let kPretyCellH : CGFloat = kNomalCellW * 4 / 3
 private let kCellHeadrH : CGFloat = 50
 
 private let kNomalCellID = "kNomalCellID"
 private let kHeaderID = "kHeaderID"
+private let kCollectionPretyCellID = "kCollectionPretyCellID"
 
 class RecommendViewController: UIViewController {
 
@@ -30,16 +32,21 @@ class RecommendViewController: UIViewController {
         layout.sectionInset = UIEdgeInsets(top: 0, left: kMargin, bottom: 0, right: kMargin)
     
         let collectionView = UICollectionView(frame: self.view.bounds , collectionViewLayout: layout)
-        collectionView.backgroundColor = UIColor.gray
+        collectionView.backgroundColor = UIColor.white
         collectionView.dataSource = self
         collectionView.delegate = self
         //设置collectionView的高度随父控件拉伸而拉伸
         collectionView.autoresizingMask = [.flexibleWidth,.flexibleHeight]
         
         ///注册cell
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: kNomalCellID)
+//        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: kNomalCellID)
+        collectionView.register(UINib(nibName: "CollectionNormalCell", bundle: nil), forCellWithReuseIdentifier: kNomalCellID)
+        //
+        collectionView.register(UINib(nibName: "CollectionPretyCell", bundle: nil), forCellWithReuseIdentifier: kCollectionPretyCellID)
+        
         ///注册头view
-        collectionView.register(UICollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: kHeaderID)
+        collectionView.register(UINib(nibName: "CollectionHeaderView", bundle: nil), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: kHeaderID)
+        
         return collectionView
     }()
     
@@ -62,17 +69,27 @@ extension RecommendViewController {
 
 //MARK:-UICollectionViewDataSource
 
-extension RecommendViewController : UICollectionViewDataSource {
+extension RecommendViewController : UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kNomalCellID, for: indexPath)
-        cell.backgroundColor = UIColor.random255()
+        var cell : UICollectionViewCell!
+        if indexPath.section == 1 {
+            cell = collectionView.dequeueReusableCell(withReuseIdentifier: kCollectionPretyCellID, for: indexPath)
+        } else {
+            cell = collectionView.dequeueReusableCell(withReuseIdentifier: kNomalCellID, for: indexPath)
+        }
         return cell
-        
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        if indexPath.section == 1 {
+            return CGSize(width: kNomalCellW, height: kPretyCellH)
+        } else {
+            return CGSize(width: kNomalCellW, height: kNomalCellH)
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: kHeaderID, for: indexPath)
-        headerView.backgroundColor = UIColor.white
         return headerView
     }
     
@@ -88,6 +105,3 @@ extension RecommendViewController : UICollectionViewDataSource {
     }
 }
 
-extension RecommendViewController : UICollectionViewDelegate {
-    
-}

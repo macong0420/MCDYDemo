@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="CollectionNormalCell" customModule="MCDYDemo" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="311" height="219"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="311" height="219"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="recommend_video" translatesAutoresizingMaskIntoConstraints="NO" id="Tfo-fO-1v2">
+                        <rect key="frame" x="5" y="187" width="22" height="22"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="22" id="CNo-xd-JWa"/>
+                            <constraint firstAttribute="width" constant="22" id="HCd-DQ-7w2"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="swift练手" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K4R-BK-x1E">
+                        <rect key="frame" x="37" y="188" width="269" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="app_icon_default.84d5c252" translatesAutoresizingMaskIntoConstraints="NO" id="SOB-u1-hfe">
+                        <rect key="frame" x="0.0" y="0.0" width="311" height="177"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="8"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                        </userDefinedRuntimeAttributes>
+                    </imageView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3E3-r5-IlZ">
+                        <rect key="frame" x="236" y="150" width="70" height="22"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="70" id="8F4-UT-To8"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="9"/>
+                        <state key="normal" title="55555" image="image_recommondAnchor"/>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="测试文字测试文字" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wb6-0r-UzN">
+                        <rect key="frame" x="5" y="156" width="226" height="16"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="Tfo-fO-1v2" firstAttribute="top" secondItem="SOB-u1-hfe" secondAttribute="bottom" constant="10" id="25t-OB-2bs"/>
+                <constraint firstItem="Tfo-fO-1v2" firstAttribute="top" secondItem="SOB-u1-hfe" secondAttribute="bottom" constant="10" id="2Vk-b8-Von"/>
+                <constraint firstAttribute="bottom" secondItem="Tfo-fO-1v2" secondAttribute="bottom" constant="10" id="2Yp-ks-Pob"/>
+                <constraint firstAttribute="trailing" secondItem="SOB-u1-hfe" secondAttribute="trailing" id="5Pd-Th-h1c"/>
+                <constraint firstItem="SOB-u1-hfe" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="8zu-V8-0o8"/>
+                <constraint firstItem="3E3-r5-IlZ" firstAttribute="leading" secondItem="wb6-0r-UzN" secondAttribute="trailing" constant="5" id="CYP-iH-6Ft"/>
+                <constraint firstAttribute="trailing" secondItem="K4R-BK-x1E" secondAttribute="trailing" constant="5" id="Gdh-9I-abG"/>
+                <constraint firstItem="wb6-0r-UzN" firstAttribute="bottom" secondItem="SOB-u1-hfe" secondAttribute="bottom" constant="-5" id="JLh-Z2-Gei"/>
+                <constraint firstAttribute="bottom" secondItem="K4R-BK-x1E" secondAttribute="bottom" constant="10" id="RT6-st-yv9"/>
+                <constraint firstItem="Tfo-fO-1v2" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="XhA-BK-VBh"/>
+                <constraint firstItem="K4R-BK-x1E" firstAttribute="leading" secondItem="Tfo-fO-1v2" secondAttribute="trailing" constant="10" id="a1D-3g-1t8"/>
+                <constraint firstItem="3E3-r5-IlZ" firstAttribute="bottom" secondItem="wb6-0r-UzN" secondAttribute="bottom" id="fMa-WA-lJt"/>
+                <constraint firstItem="3E3-r5-IlZ" firstAttribute="leading" secondItem="wb6-0r-UzN" secondAttribute="trailing" constant="5" id="kd6-ec-TJg"/>
+                <constraint firstAttribute="trailing" secondItem="3E3-r5-IlZ" secondAttribute="trailing" constant="5" id="pN2-lR-OUr"/>
+                <constraint firstItem="SOB-u1-hfe" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="uSp-Zn-Blu"/>
+                <constraint firstItem="wb6-0r-UzN" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="wqC-LH-9o2"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="311" height="219"/>
+            <point key="canvasLocation" x="-26.399999999999999" y="87.706146926536732"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="app_icon_default.84d5c252" width="345" height="207"/>
+        <image name="image_recommondAnchor" width="22" height="22"/>
+        <image name="recommend_video" width="22" height="22"/>
+    </resources>
+</document>

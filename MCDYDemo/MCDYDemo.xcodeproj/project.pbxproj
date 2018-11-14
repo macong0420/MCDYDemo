@@ -22,6 +22,12 @@
 		E27D4B56219975AB005248D5 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27D4B55219975AB005248D5 /* HomeViewController.swift */; };
 		E27D4B59219981DD005248D5 /* UIBarButtonItem-Extision.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27D4B58219981DD005248D5 /* UIBarButtonItem-Extision.swift */; };
 		E296E5DD219BBC4E00096AEB /* RecommendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E296E5DC219BBC4E00096AEB /* RecommendViewController.swift */; };
+		E296E5E0219BCF8C00096AEB /* CollectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E296E5DE219BCF8C00096AEB /* CollectionHeaderView.swift */; };
+		E296E5E1219BCF8C00096AEB /* CollectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E296E5DF219BCF8C00096AEB /* CollectionHeaderView.xib */; };
+		E296E5E4219BF48200096AEB /* CollectionNormalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E296E5E2219BF48200096AEB /* CollectionNormalCell.swift */; };
+		E296E5E5219BF48200096AEB /* CollectionNormalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E296E5E3219BF48200096AEB /* CollectionNormalCell.xib */; };
+		E296E5E8219C061700096AEB /* CollectionPretyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E296E5E6219C061700096AEB /* CollectionPretyCell.swift */; };
+		E296E5E9219C061700096AEB /* CollectionPretyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E296E5E7219C061700096AEB /* CollectionPretyCell.xib */; };
 		E2DC9252219A6D5600C1B1FF /* PageTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2DC9251219A6D5600C1B1FF /* PageTitleView.swift */; };
 		E2DC9254219A72AF00C1B1FF /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2DC9253219A72AF00C1B1FF /* File.swift */; };
 		E2DC9256219A839B00C1B1FF /* PageContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2DC9255219A839B00C1B1FF /* PageContentView.swift */; };
@@ -67,6 +73,12 @@
 		E27D4B55219975AB005248D5 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		E27D4B58219981DD005248D5 /* UIBarButtonItem-Extision.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem-Extision.swift"; sourceTree = "<group>"; };
 		E296E5DC219BBC4E00096AEB /* RecommendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendViewController.swift; sourceTree = "<group>"; };
+		E296E5DE219BCF8C00096AEB /* CollectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionHeaderView.swift; sourceTree = "<group>"; };
+		E296E5DF219BCF8C00096AEB /* CollectionHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionHeaderView.xib; sourceTree = "<group>"; };
+		E296E5E2219BF48200096AEB /* CollectionNormalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionNormalCell.swift; sourceTree = "<group>"; };
+		E296E5E3219BF48200096AEB /* CollectionNormalCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionNormalCell.xib; sourceTree = "<group>"; };
+		E296E5E6219C061700096AEB /* CollectionPretyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionPretyCell.swift; sourceTree = "<group>"; };
+		E296E5E7219C061700096AEB /* CollectionPretyCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionPretyCell.xib; sourceTree = "<group>"; };
 		E2DC9251219A6D5600C1B1FF /* PageTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageTitleView.swift; sourceTree = "<group>"; };
 		E2DC9253219A72AF00C1B1FF /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		E2DC9255219A839B00C1B1FF /* PageContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageContentView.swift; sourceTree = "<group>"; };
@@ -247,6 +259,8 @@
 		E27D4B4D21997572005248D5 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				E296E5DE219BCF8C00096AEB /* CollectionHeaderView.swift */,
+				E296E5DF219BCF8C00096AEB /* CollectionHeaderView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -325,6 +339,10 @@
 			children = (
 				E2DC9251219A6D5600C1B1FF /* PageTitleView.swift */,
 				E2DC9255219A839B00C1B1FF /* PageContentView.swift */,
+				E296E5E2219BF48200096AEB /* CollectionNormalCell.swift */,
+				E296E5E3219BF48200096AEB /* CollectionNormalCell.xib */,
+				E296E5E6219C061700096AEB /* CollectionPretyCell.swift */,
+				E296E5E7219C061700096AEB /* CollectionPretyCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -442,7 +460,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E296E5E9219C061700096AEB /* CollectionPretyCell.xib in Resources */,
 				E27D4B0E21996BB4005248D5 /* LaunchScreen.storyboard in Resources */,
+				E296E5E1219BCF8C00096AEB /* CollectionHeaderView.xib in Resources */,
+				E296E5E5219BF48200096AEB /* CollectionNormalCell.xib in Resources */,
 				E27D4B0B21996BB4005248D5 /* Assets.xcassets in Resources */,
 				E27D4B0921996BB3005248D5 /* Main.storyboard in Resources */,
 				E27D4B4821997512005248D5 /* Follow.storyboard in Resources */,
@@ -473,7 +494,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E296E5E8219C061700096AEB /* CollectionPretyCell.swift in Sources */,
 				E2DC9252219A6D5600C1B1FF /* PageTitleView.swift in Sources */,
+				E296E5E0219BCF8C00096AEB /* CollectionHeaderView.swift in Sources */,
 				E27D4B59219981DD005248D5 /* UIBarButtonItem-Extision.swift in Sources */,
 				E2DC9254219A72AF00C1B1FF /* File.swift in Sources */,
 				E2DC9256219A839B00C1B1FF /* PageContentView.swift in Sources */,
@@ -482,6 +505,7 @@
 				E27D4B0621996BB3005248D5 /* ViewController.swift in Sources */,
 				E27D4B0421996BB3005248D5 /* AppDelegate.swift in Sources */,
 				E27D4B56219975AB005248D5 /* HomeViewController.swift in Sources */,
+				E296E5E4219BF48200096AEB /* CollectionNormalCell.swift in Sources */,
 				E296E5DD219BBC4E00096AEB /* RecommendViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
