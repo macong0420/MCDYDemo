@@ -16,7 +16,7 @@ class HomeViewController: UIViewController {
     private lazy var pageTitleView : PageTitleView = { [weak self] in
         
         let titles = ["推荐","游戏","娱乐","趣玩"]
-        let titleFrame = CGRect(x: 0, y: kNavgationBarh+kStatusBarH, width: Int(kScreenW), height: kTitleViewH)
+        let titleFrame = CGRect(x: 0, y: kNavgationBarH+kStatusBarH, width: Int(kScreenW), height: kTitleViewH)
         let titleView = PageTitleView(frame: titleFrame, titles: titles)
         titleView.delegate = self
         return titleView
@@ -24,12 +24,13 @@ class HomeViewController: UIViewController {
     
     //MARK:- 懒加载pageContenView
     private lazy var pageContentView : PageContentView = { [weak self] in
-        let contenY : CGFloat = CGFloat(kStatusBarH + kNavgationBarh + kTitleViewH)
-        let contenH : CGFloat = kScreenH - contenY
+        let contenY : CGFloat = CGFloat(kStatusBarH + kNavgationBarH + kTitleViewH)
+        let contenH : CGFloat = kScreenH - contenY - CGFloat(kTabBarItemH)
         let contenFrame = CGRect(x: 0, y: contenY, width: kScreenW, height: contenH)
         
         var childVcs = [UIViewController]()
-        for _ in 0..<4 {
+        childVcs.append(RecommendViewController())
+        for _ in 0..<3 {
             let vc = UIViewController()
             vc.view.backgroundColor = UIColor(r: CGFloat(arc4random_uniform(255)), g: CGFloat(arc4random_uniform(255)), b: CGFloat(arc4random_uniform(255)), a: 1.0)
             childVcs.append(vc)
